@@ -11,7 +11,7 @@
 
 <script>
 import Artist from './components/Artist.vue'
-import Spinner from '/components/Spinner.vue'
+import Spinner from './components/Spinner.vue'
 import getArtists from './api'
 
 export default {
@@ -36,6 +36,7 @@ export default {
     refreshArtists() {
       const self = this
       this.loading=true
+      this.artists=[]
 
       getArtists(this.selectedCountry)
         .then(function (artists) {
